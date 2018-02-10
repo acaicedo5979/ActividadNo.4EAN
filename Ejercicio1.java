@@ -7,7 +7,7 @@
 
 import java.util.Scanner;
 
-public class Sumaenteros
+public class Ejercicio1
 {
     public static void main(String[] args)
     {
