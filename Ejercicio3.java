@@ -6,28 +6,56 @@
  */
 
 import java.io.*;
+import java.util.Scanner;
+import java.util.InputMismatchException; 
  
-class Ejercicio3
+class Factorial 
 {
-
+    // Funcion que retorna numero de zeros en n factorial
     static int findTrailingZeros(int n)
     {
-
+        // Inicia resultado
         int count = 0;
-
-
+ 
+        // Divide por exponentes de 5
         for (int i=5; n/i>=1; i *= 5)
             count += n/i;
  
         return count;
     }
      
-
+    // Maneja el programa
     public static void main (String[] args) 
     {
-        /* Respuesta para el numero 25 */
-        int n = 25;
-        System.out.println("Trailing 0s in "+ n +"! is "
+    
+    boolean bError = true;
+    	// Re inicia la funcion si el usuario no pone un numero valido
+ 	while(bError)
+ 	{
+ 	// Prevee error en caso de que el usuario no ponga un numero valido
+ 	try
+        {
+    
+    	Scanner sc = new Scanner(System.in);
+    
+        System.out.println("Ingrese el numero");
+        int n = sc.nextInt();
+        System.out.println("El numero de 0s en "+ n +"! es "
                                     + findTrailingZeros(n));
+                                    bError = false;
+              
+         }
+         
+         catch(InputMismatchException exception) 
+         {
+         System.out.println("Error: esto no es un numero");
+         }    
+ 	
+ 	
+ 	}
+    
+                        
+                                    
     }
+    
 }
